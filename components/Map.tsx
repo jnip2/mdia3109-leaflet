@@ -57,166 +57,6 @@ const expoPolyline: [number, number][][] = [
     ]
 ]
 
-const stops = {
-    expo: [
-        {
-            name: 'Waterfront',
-            coordinates: [49.28596254125285, -123.1115641984694]
-        },
-        {
-            name: 'Burrard',
-            coordinates: [49.28562655391477, -123.12013658449946]
-        },
-        {
-            name: 'Granville',
-            coordinates: [49.28332068860059, -123.11610837886587]
-        },
-        {
-            name: 'Stadium-Chinatown',
-            coordinates: [49.279593538903825, -123.10973723719147]
-        },
-        {
-            name: 'Main Street-Science World',
-            coordinates: [49.27318833962156, -123.10037533014491]
-        },
-        {
-            name: 'Commercial-Broadway',
-            coordinates: [49.26262556853368, -123.06922959912575]
-        },
-        {
-            name: 'Nanaimo',
-            coordinates: [49.24828748044079, -123.05597868051555]
-        },
-        {
-            name: '29th Avenue',
-            coordinates: [49.244224930897545, -123.04598147356097]
-        },
-        {
-            name: 'Joyce-Collingwood',
-            coordinates: [49.2385357389229, -123.0318416494578]
-        },
-        {
-            name: 'Patterson',
-            coordinates: [49.229846559084535, -123.01262806720702]
-        },
-        {
-            name: 'Metrotown',
-            coordinates: [49.225828722653375, -123.00394849445841]
-        },
-        {
-            name: 'Royal Oak',
-            coordinates: [49.220110564198315, -122.98845223374066]
-        },
-        {
-            name: 'Edmonds',
-            coordinates: [49.2122090841458, -122.95916947524144]
-        },
-        {
-            name: '22nd Street',
-            coordinates: [49.200050597176755, -122.94912210695107]
-        },
-        {
-            name: 'New Westminster',
-            coordinates: [49.20152302863246, -122.91265937821458]
-        },
-        {
-            name: 'Columbia',
-            coordinates: [49.2048263863152, -122.90604161170117]
-        },
-        {
-            name: 'Sapperton',
-            coordinates: [49.2247492784129, -122.8893533313045]
-        },
-        {
-            name: 'Braid',
-            coordinates: [49.23320914057442, -122.8827972324297]
-        },
-        {
-            name: 'Lougheed Town Centre',
-            coordinates: [49.2484585774381, -122.89692764718882]
-        },
-        {
-            name: 'Production Way-University',
-            coordinates: [49.253476998259956, -122.91809540657253]
-        },
-        {
-            name: 'Scott Road',
-            coordinates: [49.20433152023783, -122.8743407662247]
-        },
-        {
-            name: 'Gateway',
-            coordinates: [49.19898868800528, -122.85072488150593]
-        },
-        {
-            name: 'Surrey Central',
-            coordinates: [49.18957322111294, -122.84797372385256]
-        },
-        {
-            name: 'King George',
-            coordinates: [49.18295549228162, -122.84477853543264]
-        }
-
-    ],
-    millennium: [
-        {
-            name: 'VCC-Clark',
-            coordinates: [49.26590784923915, -123.0789991566088]
-        },
-        {
-            name: 'Renfrew',
-            coordinates: [49.25894539616446, -123.04538851025973]
-        },
-        {
-            name: 'Rupert',
-            coordinates: [49.26083536319238, -123.03279926371272]
-        },
-        {
-            name: 'Gilmore',
-            coordinates: [49.26499749648871, -123.0136123291517]
-        },
-        {
-            name: 'Brentwood Town Centre',
-            coordinates: [49.266396574716595, -123.00163992359386]
-        },
-        {
-            name: 'Holdom',
-            coordinates: [49.26469541711446, -122.98218161413023]
-        },
-        {
-            name: 'Sperling-Burnaby Lake',
-            coordinates: [49.25922280028765, -122.96403088346]
-        },
-        {
-            name: 'Lake City Way',
-            coordinates: [49.25463930035987, -122.93920909328277]
-        },
-        {
-            name: 'Burquitlam',
-            coordinates: [49.26134056629032, -122.88982617732917]
-        },
-        {
-            name: 'Moody Centre',
-            coordinates: [49.2779986736361, -122.84584474841797]
-        },
-        {
-            name: 'Inlet Centre',
-            coordinates: [49.27723271042005, -122.82822048245389]
-        },
-        {
-            name: 'Coquitlam Central',
-            coordinates: [49.274811242859954, -122.80077036734338]
-        },
-        {
-            name: 'Lincoln',
-            coordinates: [49.280360663252836, -122.79383918387805]
-        },
-        {
-            name: 'Lafarge Lake-Douglas',
-            coordinates: [49.28565918325952, -122.79156621011902]
-        },
-    ]
-}
-
 const millenniumPolyline: [number, number][] = [
     [49.26590784923915, -123.0789991566088],
     [49.25894539616446, -123.04538851025973],
@@ -252,46 +92,313 @@ const Map = () => {
                     attribution='&copy; By <a href="">Joey Nip</a>'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                 />
-                {
-                    stops.expo.map((item, index) => {
-                        return (
-                            <div key={index}>
-                                <Marker
-                                    position={item.coordinates}
-                                    icon={icon}
-                                >
-                                    <Popup>
-                                        {item.name}
-                                    </Popup>
-                                </Marker>
-                            </div>
-                        )
-                    })
-                }
-                {
-                    stops.millennium.map((item, index) => {
-                        return (
-                            <div key={index}>
-                                <Marker
-                                    position={item.coordinates}
-                                    icon={icon}
-                                >
-                                    <Popup>
-                                        {item.name}
-                                    </Popup>
-                                </Marker>
-                            </div>
-                        )
-                    })
-                }
-                {/* <Marker
-                position={[49.28596254125285, -123.1115641984694]}
-                icon={icon}
-            >
-                <Popup>
-                    Waterfront
-                </Popup>
-            </Marker> */}
+                <Marker
+                    position={[49.28596254125285, -123.1115641984694]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Waterfront
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.28562655391477, -123.12013658449946]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Burrard
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.28332068860059, -123.11610837886587]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Granville
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.279593538903825, -123.10973723719147]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Stadium-Chinatown
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.27318833962156, -123.10037533014491]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Main Street-Science World
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.26262556853368, -123.06922959912575]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Commercial-Broadway
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.24828748044079, -123.05597868051555]
+                    }
+                    icon={icon}
+                >
+                    <Popup>
+                        Nanaimo
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.244224930897545, -123.04598147356097]}
+                    icon={icon}
+                >
+                    <Popup>
+                        29th Avenue
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2385357389229, -123.0318416494578]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Joyce-Collingwood
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.229846559084535, -123.01262806720702]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Patterson
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.225828722653375, -123.00394849445841]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Metrotown
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.220110564198315, -122.98845223374066]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Royal Oak
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2122090841458, -122.95916947524144]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Edmonds
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.200050597176755, -122.94912210695107]}
+                    icon={icon}
+                >
+                    <Popup>
+                        22nd Street
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.20152302863246, -122.91265937821458]}
+                    icon={icon}
+                >
+                    <Popup>
+                        New Westminster
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2048263863152, -122.90604161170117]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Columbia
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2247492784129, -122.8893533313045]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Sapperton
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.23320914057442, -122.8827972324297]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Braid
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2484585774381, -122.89692764718882]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Lougheed Town Centre
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.253476998259956, -122.91809540657253]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Production Way-University
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.20433152023783, -122.8743407662247]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Scott Road
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.19898868800528, -122.85072488150593]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Gateway
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.18957322111294, -122.84797372385256]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Surrey Central
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.18295549228162, -122.84477853543264]}
+                    icon={icon}
+                >
+                    <Popup>
+                        King George
+                    </Popup>
+                </Marker>
+
+                {/* millennium */}
+                <Marker
+                    position={[49.26590784923915, -123.0789991566088]}
+                    icon={icon}
+                >
+                    <Popup>
+                        VCC-Clark
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.25894539616446, -123.04538851025973]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Renfew
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.26083536319238, -123.03279926371272]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Rupert
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.26499749648871, -123.0136123291517]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Gilmore
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.266396574716595, -123.00163992359386]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Brentwood Town Centre
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.26469541711446, -122.98218161413023]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Holdom
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.25922280028765, -122.96403088346]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Sperling-Burnaby Lake
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.25463930035987, -122.93920909328277]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Lake City Way
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.26134056629032, -122.88982617732917]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Burquitlam
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.2779986736361, -122.84584474841797]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Moody Centre
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.27723271042005, -122.82822048245389]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Inlet Centre
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.274811242859954, -122.80077036734338]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Coquitlam Central
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.280360663252836, -122.79383918387805]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Lincoln
+                    </Popup>
+                </Marker>
+                <Marker
+                    position={[49.28565918325952, -122.79156621011902]}
+                    icon={icon}
+                >
+                    <Popup>
+                        Lafarge Lake-Douglas
+                    </Popup>
+                </Marker>
                 <Polyline pathOptions={expoOptions} positions={expoPolyline} />
                 <Polyline pathOptions={millenniumOptions} positions={millenniumPolyline} />
             </MapContainer>
