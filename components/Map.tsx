@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup, Polyline, Circle, CircleMarker } from "react-leaflet"
 import 'leaflet/dist/leaflet.css'
 import L from "leaflet"
+import Image from "next/image"
 
 const icon = L.icon({
     iconUrl: '/images/icon.png',
@@ -79,8 +80,9 @@ const millenniumPolyline: [number, number][] = [
 const Map = () => {
     return (
         <>
-            <div style={{ height: '50px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-                <h1>How2Go</h1>
+            <div style={{ height: '50px', justifyContent: 'center', alignItems: 'center', display: 'flex', backgroundColor: 'purple', gap: '10px' }}>
+                <Image src='/images/how2go.png' height={30} width={20} alt='how2go logo' />
+                <h1 style={{ fontSize: '20px', color: 'white' }}>How2Go</h1>
             </div>
             <MapContainer
                 style={{ height: '100vh' }}
@@ -89,7 +91,7 @@ const Map = () => {
                 scrollWheelZoom={true}
             >
                 <TileLayer
-                    attribution='&copy; By <a href="">Joey Nip</a>'
+                    attribution='&copy; By <a href="https://github.com/jnip2/mdia3109-leaflet">Joey Nip</a>'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                 />
                 <Marker
