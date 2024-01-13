@@ -255,30 +255,32 @@ const Map = () => {
                 {
                     stops.expo.map((item, index) => {
                         return (
-                            <Marker
-                                position={item.coordinates}
-                                icon={icon}
-                                key={index}
-                            >
-                                <Popup>
-                                    {item.name}
-                                </Popup>
-                            </Marker>
+                            <div key={index}>
+                                <Marker
+                                    position={item.coordinates}
+                                    icon={icon}
+                                >
+                                    <Popup>
+                                        {item.name}
+                                    </Popup>
+                                </Marker>
+                            </div>
                         )
                     })
                 }
                 {
                     stops.millennium.map((item, index) => {
                         return (
-                            <Marker
-                                position={item.coordinates}
-                                icon={icon}
-                                key={index}
-                            >
-                                <Popup>
-                                    {item.name}
-                                </Popup>
-                            </Marker>
+                            <div key={index}>
+                                <Marker
+                                    position={item.coordinates}
+                                    icon={icon}
+                                >
+                                    <Popup>
+                                        {item.name}
+                                    </Popup>
+                                </Marker>
+                            </div>
                         )
                     })
                 }
