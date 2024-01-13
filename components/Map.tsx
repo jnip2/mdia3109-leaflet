@@ -258,6 +258,7 @@ const Map = () => {
                             <Marker
                                 position={item.coordinates}
                                 icon={icon}
+                                key={index}
                             >
                                 <Popup>
                                     {item.name}
@@ -272,6 +273,7 @@ const Map = () => {
                             <Marker
                                 position={item.coordinates}
                                 icon={icon}
+                                key={index}
                             >
                                 <Popup>
                                     {item.name}
